@@ -1,9 +1,11 @@
-width = 40;
-boardSize = 3.5;
+width = 30;
+boardSize = 3.6;
 
-thick1t = 1;
+thick1t = 0.4;
 thick2t = 12;
-thick3t = 4;
+thick3t = 2;
+
+eps = 0.0001;
 
 height1 = boardSize;
 height2 = 1;
@@ -11,11 +13,11 @@ height2 = 1;
 $fn = 15;
 radius = 1.5;
 
-r = 3;
+r = 2;
 
 thick1 = thick1t;
 thick2 = thick2t - r;
-thick3 = thick3t - r;
+thick3 = thick3t - r + eps;
 
 module base() {
 
@@ -61,9 +63,9 @@ difference() {
     }
     union() {
         translate([0, width/3.2, 0]) {
-            cylinder(h = thick3*10, r = radius, center = true);
-            translate([0, 0, thick3 + r + radius/2])
-                sphere(r = radius*1.7); 
+            cylinder(h = (thick3 + r) * 2, r = radius, center = true);
+            translate([0, 0, thick3 + r + radius/1.3])
+                sphere(r = radius*1.8); 
         }
     }
 }
