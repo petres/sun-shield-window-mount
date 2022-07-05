@@ -10,7 +10,7 @@ eps = 0.0001;
 height1 = boardSize;
 height2 = 1;
 
-$fn = 15;
+$fn = 65;
 radius = 1.5;
 
 r = 2;
